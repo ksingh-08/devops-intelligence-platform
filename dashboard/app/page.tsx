@@ -17,6 +17,7 @@ import IssuesSummary from '../components/IssuesSummary'
 import FixesGenerated from '../components/FixesGenerated'
 import DecisionHistory from '../components/DecisionHistory'
 import DeploymentTimeline from '../components/DeploymentTimeline'
+import HackathonDemo from '../components/HackathonDemo'
 
 // Mock data for demonstration
 const mockStats = {
@@ -138,6 +139,11 @@ export default function Dashboard() {
           animate="visible"
           className="space-y-8"
         >
+          {/* Hackathon Demo Section */}
+          <motion.div variants={itemVariants}>
+            <HackathonDemo />
+          </motion.div>
+
           {/* Stats Overview */}
           <motion.div variants={itemVariants}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">

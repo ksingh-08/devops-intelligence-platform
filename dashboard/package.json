@@ -36,7 +36,11 @@
     "react-query": "^3.39.3",
     "zustand": "^4.4.7",
     "framer-motion": "^10.16.16",
-    "react-hot-toast": "^2.4.1"
+    "react-hot-toast": "^2.4.1",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-progress": "^1.0.3",
+    "class-variance-authority": "^0.7.0",
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
