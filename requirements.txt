@@ -1,0 +1,35 @@
+# DevOps Intelligence Platform - Python Dependencies
+# For Kestra workflows and decision engine scripts
+
+# Core dependencies
+requests>=2.31.0
+python-dateutil>=2.8.2
+pandas>=2.1.0
+
+# Development and code quality
+black>=23.0.0
+isort>=5.12.0
+pylint>=3.0.0
+mypy>=1.7.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+
+# Kestra workflow dependencies
+pyyaml>=6.0.1
+jsonschema>=4.20.0
+
+# AI/ML libraries (optional, for advanced decision engine features)
+scikit-learn>=1.3.0
+numpy>=1.24.0
+
+# Logging and monitoring
+structlog>=23.2.0
+
+# Security
+cryptography>=41.0.0
+
+# Environment management
+python-dotenv>=1.0.0
