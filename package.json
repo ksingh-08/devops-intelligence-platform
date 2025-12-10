@@ -1,0 +1,139 @@
+{
+  "name": "devops-intelligence-platform",
+  "version": "1.0.0",
+  "description": "Autonomous AI agent system for DevOps incident response and resolution",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "kestra:validate": "cd kestra && kestra flow validate workflows/",
+    "kestra:deploy": "cd kestra && kestra flow deploy workflows/",
+    "cline:setup": "cd cline && chmod +x scripts/*.sh",
+    "docker:build": "docker build -t devops-intelligence .",
+    "docker:run": "docker run -p 3000:3000 devops-intelligence"
+  },
+  "keywords": [
+    "devops",
+    "ai-agents",
+    "automation",
+    "kestra",
+    "cline",
+    "vercel",
+    "coderabbit",
+    "hackathon",
+    "incident-response",
+    "autonomous-systems"
+  ],
+  "author": "DevOps Intelligence Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/devops-intelligence-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/devops-intelligence-platform/issues"
+  },
+  "homepage": "https://devops-intelligence.vercel.app",
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "tailwindcss": "^3.3.6",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.294.0",
+    "recharts": "^2.8.0",
+    "date-fns": "^2.30.0",
+    "axios": "^1.6.2",
+    "ws": "^8.14.2",
+    "@types/ws": "^8.5.10",
+    "socket.io-client": "^4.7.4",
+    "react-query": "^3.39.3",
+    "zustand": "^4.4.7",
+    "framer-motion": "^10.16.16",
+    "react-hot-toast": "^2.4.1",
+    "react-hook-form": "^7.48.2",
+    "@hookform/resolvers": "^3.3.2",
+    "zod": "^3.22.4",
+    "jsonwebtoken": "^9.0.2",
+    "@types/jsonwebtoken": "^9.0.5",
+    "bcryptjs": "^2.4.3",
+    "@types/bcryptjs": "^2.4.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/user-event": "^14.5.1",
+    "jest-environment-jsdom": "^29.7.0",
+    "@playwright/test": "^1.40.1",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "moduleNameMapping": {
+      "^@/(.*)$": "<rootDir>/dashboard/$1"
+    },
+    "collectCoverageFrom": [
+      "dashboard/**/*.{js,jsx,ts,tsx}",
+      "!dashboard/**/*.d.ts",
+      "!dashboard/node_modules/**"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.next/"
+    ]
+  }
+}
