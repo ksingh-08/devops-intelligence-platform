@@ -17,7 +17,6 @@ import IssuesSummary from '../components/IssuesSummary'
 import FixesGenerated from '../components/FixesGenerated'
 import DecisionHistory from '../components/DecisionHistory'
 import DeploymentTimeline from '../components/DeploymentTimeline'
-import HackathonDemo from '../components/HackathonDemo'
 
 // Mock data for demonstration
 const mockStats = {
@@ -97,14 +96,14 @@ export default function Dashboard() {
                 <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
                   <CpuChipIcon className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                    DevOps Intelligence Platform
-                  </h1>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    AI Agents Assemble Hackathon
-                  </p>
-                </div>
+                  <div>
+                    <h1 className="text-xl font-bold text-gray-900 dark:text-white">
+                      DevOps Intelligence Platform
+                    </h1>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Autonomous Operations Dashboard
+                    </p>
+                  </div>
               </div>
             </div>
 
@@ -122,9 +121,9 @@ export default function Dashboard() {
                 {currentTime.toLocaleTimeString()}
               </div>
 
-              {/* Hackathon Badge */}
-              <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                Live Demo
+              {/* Status Badge */}
+              <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                Production
               </div>
             </div>
           </div>
@@ -139,10 +138,6 @@ export default function Dashboard() {
           animate="visible"
           className="space-y-8"
         >
-          {/* Hackathon Demo Section */}
-          <motion.div variants={itemVariants}>
-            <HackathonDemo />
-          </motion.div>
 
           {/* Stats Overview */}
           <motion.div variants={itemVariants}>
@@ -363,52 +358,6 @@ export default function Dashboard() {
             </div>
           </motion.div>
 
-          {/* Sponsor Integration Status */}
-          <motion.div variants={itemVariants}>
-            <div className="card">
-              <div className="card-header">
-                <h2 className="card-title">Hackathon Integration Status</h2>
-                <p className="card-description">
-                  Real-time status of all sponsor tool integrations
-                </p>
-              </div>
-              <div className="card-content">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="flex items-center space-x-3 p-4 bg-success-50 dark:bg-success-900/20 rounded-lg">
-                    <CheckCircleIcon className="w-6 h-6 text-success-500" />
-                    <div>
-                      <p className="font-medium text-success-900 dark:text-success-100">Kestra</p>
-                      <p className="text-sm text-success-700 dark:text-success-300">AI Agent Active</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 p-4 bg-success-50 dark:bg-success-900/20 rounded-lg">
-                    <CheckCircleIcon className="w-6 h-6 text-success-500" />
-                    <div>
-                      <p className="font-medium text-success-900 dark:text-success-100">Cline CLI</p>
-                      <p className="text-sm text-success-700 dark:text-success-300">Code Generation Ready</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 p-4 bg-success-50 dark:bg-success-900/20 rounded-lg">
-                    <CheckCircleIcon className="w-6 h-6 text-success-500" />
-                    <div>
-                      <p className="font-medium text-success-900 dark:text-success-100">Vercel</p>
-                      <p className="text-sm text-success-700 dark:text-success-300">Deployed Successfully</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 p-4 bg-success-50 dark:bg-success-900/20 rounded-lg">
-                    <CheckCircleIcon className="w-6 h-6 text-success-500" />
-                    <div>
-                      <p className="font-medium text-success-900 dark:text-success-100">CodeRabbit</p>
-                      <p className="text-sm text-success-700 dark:text-success-300">Reviews Enabled</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </main>
 
@@ -418,19 +367,13 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Built for AI Agents Assemble Hackathon by WeMakeDevs
+                DevOps Intelligence Platform - Autonomous Operations
               </p>
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Competing for $12,000 in prizes
+                System Status: Operational
               </span>
-              <div className="flex space-x-2">
-                <span className="badge badge-primary">Kestra</span>
-                <span className="badge badge-secondary">Cline CLI</span>
-                <span className="badge badge-success">Vercel</span>
-                <span className="badge badge-warning">CodeRabbit</span>
-              </div>
             </div>
           </div>
         </div>
