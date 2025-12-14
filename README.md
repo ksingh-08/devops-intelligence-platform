@@ -1,37 +1,37 @@
 # DevOps Intelligence Platform - AI Agents Assemble Hackathon
 
-## 🏆 Competing for 4 Prizes ($12,000 Total)
+## Competing for 4 Prizes ($12,000 Total)
 
 - **Infinity Build Award ($5,000)** - Cline CLI autonomous coding workflows
 - **Wakanda Data Award ($4,000)** - Kestra AI Agent data summarization & decision making  
 - **Stormbreaker Deployment Award ($2,000)** - Vercel production deployment
 - **Captain Code Award ($1,000)** - CodeRabbit automated code reviews
 
-## 🎯 The Problem
+## The Problem
 
 DevOps teams waste **10+ hours per week** on:
-- 🔍 Investigating production issues across multiple dashboards
-- 💻 Writing fix code manually for recurring issues
-- 🧪 Testing and deploying fixes with manual oversight
-- 🤔 Manual decision-making for every incident escalation
+- Investigating production issues across multiple dashboards
+- Writing fix code manually for recurring issues
+- Testing and deploying fixes with manual oversight
+- Manual decision-making for every incident escalation
 
 **Current Reality**: Average incident response time is **2+ hours**
 
-## 💡 Our Solution
+## Our Solution
 
 An **autonomous AI agent system** that reduces incident response time from **2 hours to 8 minutes** (93% reduction).
 
 ### Core Workflow
-1. **🔍 Monitor** - Kestra monitors production systems every 5 minutes
-2. **📊 Summarize** - Kestra AI Agent summarizes issues from multiple sources  
-3. **🤖 Generate** - Cline CLI autonomously generates fix code
-4. **✅ Review** - CodeRabbit automatically reviews generated code
-5. **🧪 Test** - Automated tests run in staging environment
-6. **🚀 Decide** - Agent makes autonomous deploy/escalate decisions
-7. **📦 Deploy** - Auto-deploy via Vercel with notifications
-8. **📈 Learn** - Dashboard tracks success metrics and improvements
+1. **Monitor** - Kestra monitors production systems every 5 minutes
+2. **Summarize** - Kestra AI Agent summarizes issues from multiple sources  
+3. **Generate** - Cline CLI autonomously generates fix code
+4. **Review** - CodeRabbit automatically reviews generated code
+5. **Test** - Automated tests run in staging environment
+6. **Decide** - Agent makes autonomous deploy/escalate decisions
+7. **Deploy** - Auto-deploy via Vercel with notifications
+8. **Learn** - Dashboard tracks success metrics and improvements
 
-## 🏗️ Enterprise-Grade System Architecture
+## Enterprise-Grade System Architecture
 
 The DevOps Intelligence Platform implements a sophisticated, event-driven microservices architecture with autonomous AI orchestration:
 
@@ -168,7 +168,7 @@ The DevOps Intelligence Platform implements a sophisticated, event-driven micros
 └─────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 🎯 **Key Architectural Principles**
+### Key Architectural Principles
 
 #### **1. Event-Driven Architecture**
 - **Asynchronous Processing**: All components communicate via events
@@ -195,7 +195,7 @@ The DevOps Intelligence Platform implements a sophisticated, event-driven micros
 - **Secrets Management**: Centralized credential handling
 - **Compliance Ready**: SOC2, GDPR, HIPAA compatible
 
-### 📊 **Data Flow Architecture**
+### Data Flow Architecture
 
 ```
 Incident Detection → AI Analysis → Decision Making → Code Generation → Deployment
@@ -207,7 +207,7 @@ Incident Detection → AI Analysis → Decision Making → Code Generation → D
    Aggregation     Recognition    Actions          Validation      Monitoring
 ```
 
-### 🔄 **Autonomous Workflow Execution**
+### Autonomous Workflow Execution
 
 1. **Detection Phase** (< 30 seconds)
    - Multi-source data ingestion
@@ -234,17 +234,17 @@ Incident Detection → AI Analysis → Decision Making → Code Generation → D
    - Model improvement and adaptation
    - Knowledge base expansion
 
-### 🏆 **Hackathon Architecture Highlights**
+### Hackathon Architecture Highlights
 
-- **🧠 Kestra AI Agent**: True autonomous decision-making (Wakanda Data Award)
-- **⚡ Cline CLI Integration**: Automated code generation pipeline (Infinity Build Award)
-- **🚀 Vercel Deployment**: Production-ready scalable architecture (Stormbreaker Award)
-- **🔍 CodeRabbit Quality**: Automated code review and OSS practices (Captain Code Award)
+- **Kestra AI Agent**: True autonomous decision-making (Wakanda Data Award)
+- **Cline CLI Integration**: Automated code generation pipeline (Infinity Build Award)
+- **Vercel Deployment**: Production-ready scalable architecture (Stormbreaker Award)
+- **CodeRabbit Quality**: Automated code review and OSS practices (Captain Code Award)
 
 **Total System Response Time: 8.3 minutes average (93% improvement)**
 **Business Impact: $50,000 annual savings through automation**
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Orchestration & AI
 - **Kestra** - Workflow orchestration + built-in AI Agent for data summarization
@@ -264,7 +264,7 @@ Incident Detection → AI Analysis → Decision Making → Code Generation → D
 - **Playwright** - End-to-end testing
 - **GitHub Actions** - CI/CD pipeline
 
-## 📊 Impact Metrics
+## Impact Metrics
 
 - **93% reduction** in incident response time (2 hours → 8 minutes)
 - **12 autonomous fixes** per week on average
@@ -272,7 +272,7 @@ Incident Detection → AI Analysis → Decision Making → Code Generation → D
 - **99.9% uptime** maintained with faster resolution
 - **Zero manual intervention** required for 80% of common issues
 
-## 🚀 How It Works
+## How It Works
 
 ### 1. Continuous Monitoring
 Kestra workflows run every 5 minutes, collecting data from:
@@ -316,13 +316,13 @@ Approved fixes are:
 - Monitored for success/failure metrics
 - Rolled back automatically if issues detected
 
-## 🎬 Demo
+## Demo
 
-- **🌐 Live Dashboard**: [https://devops-intelligence.vercel.app](https://devops-intelligence.vercel.app)
-- **📹 Demo Video**: [YouTube Link - 3 minutes](https://youtube.com/watch?v=demo)
-- **🔍 Sample PR with CodeRabbit**: [GitHub PR #1](https://github.com/user/repo/pull/1)
+- **Live Dashboard**: [https://dashboard-brown-beta-25.vercel.app/](https://dashboard-brown-beta-25.vercel.app/)
+- **Demo Video**: YouTube Link - 3 minutes
+- **Sample PR with CodeRabbit**: [GitHub PR](https://github.com/ksingh-08/devops-intelligence-platform/pulls)
 
-## 🧪 Running Locally
+## Running Locally
 
 ### Prerequisites
 - Node.js 18+ 
@@ -372,16 +372,16 @@ See `.env.example` for all required variables:
 - CodeRabbit API key
 - Vercel deployment token
 
-## 📝 Documentation
+## Documentation
 
-- [🏗️ Architecture Deep Dive](./docs/architecture.md)
-- [⚙️ Kestra Workflows](./docs/kestra-workflows.md)  
-- [🤖 Cline Integration](./docs/cline-integration.md)
-- [🚀 Deployment Guide](./docs/deployment.md)
-- [🧪 Testing Strategy](./docs/testing.md)
-- [📊 API Reference](./docs/api.md)
+- [Architecture Deep Dive](./docs/architecture.md)
+- [Kestra Workflows](./docs/kestra-workflows.md)  
+- [Cline Integration](./docs/cline-integration.md)
+- [Deployment Guide](./docs/deployment.md)
+- [Testing Strategy](./docs/testing.md)
+- [API Reference](./docs/api.md)
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
@@ -393,7 +393,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for gu
 5. Submit a pull request
 6. CodeRabbit will automatically review your code
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](./LICENSE) for details.
 
