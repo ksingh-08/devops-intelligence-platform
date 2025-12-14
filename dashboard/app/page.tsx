@@ -86,43 +86,43 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark-900 dark:to-dark-800">
+    <div className="min-h-screen bg-black">
       {/* Header */}
-      <header className="bg-white dark:bg-dark-800 shadow-sm border-b border-gray-200 dark:border-dark-700">
-        <div className="container-wide py-4">
+      <header className="bg-black/80 backdrop-blur-xl border-b border-gray-900 sticky top-0 z-50">
+        <div className="container-wide py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
-                  <CpuChipIcon className="w-6 h-6 text-white" />
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center glow-blue">
+                  <CpuChipIcon className="w-7 h-7 text-white" />
                 </div>
-                  <div>
-                    <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-                      DevOps Intelligence Platform
-                    </h1>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Autonomous Operations Dashboard
-                    </p>
-                  </div>
+                <div>
+                  <h1 className="text-2xl font-bold text-white">
+                    DevOps Intelligence
+                  </h1>
+                  <p className="text-sm text-gray-400">
+                    Autonomous Operations Dashboard
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
               {/* Connection Status */}
               <div className="flex items-center space-x-2">
-                <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-success-500 animate-pulse' : 'bg-error-500'}`} />
-                <span className="text-sm text-gray-600 dark:text-gray-400">
+                <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-green-500 animate-pulse glow-green' : 'bg-red-500'}`} />
+                <span className="text-sm text-gray-400">
                   {isConnected ? 'Connected' : 'Disconnected'}
                 </span>
               </div>
 
               {/* Current Time */}
-              <div className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="text-sm text-gray-400 font-mono">
                 {currentTime.toLocaleTimeString()}
               </div>
 
               {/* Status Badge */}
-              <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+              <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 border border-green-500/30 text-green-400 px-4 py-1.5 rounded-full text-xs font-medium">
                 Production
               </div>
             </div>
@@ -141,99 +141,99 @@ export default function Dashboard() {
 
           {/* Stats Overview */}
           <motion.div variants={itemVariants}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-              <div className="card hover-lift">
-                <div className="card-content">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                        Total Issues
-                      </p>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {mockStats.totalIssues}
-                      </p>
-                    </div>
-                    <ExclamationTriangleIcon className="w-8 h-8 text-warning-500" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+              <div className="card hover-lift p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
+                      Total Issues
+                    </p>
+                    <p className="text-3xl font-bold text-white">
+                      {mockStats.totalIssues}
+                    </p>
+                  </div>
+                  <div className="w-12 h-12 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
+                    <ExclamationTriangleIcon className="w-6 h-6 text-orange-500" />
                   </div>
                 </div>
               </div>
 
-              <div className="card hover-lift">
-                <div className="card-content">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                        Resolved
-                      </p>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {mockStats.resolvedIssues}
-                      </p>
-                    </div>
-                    <CheckCircleIcon className="w-8 h-8 text-success-500" />
+              <div className="card hover-lift p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
+                      Resolved
+                    </p>
+                    <p className="text-3xl font-bold text-white">
+                      {mockStats.resolvedIssues}
+                    </p>
+                  </div>
+                  <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center">
+                    <CheckCircleIcon className="w-6 h-6 text-green-500" />
                   </div>
                 </div>
               </div>
 
-              <div className="card hover-lift">
-                <div className="card-content">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                        Avg Response
-                      </p>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {mockStats.avgResponseTime}
-                      </p>
-                    </div>
-                    <ClockIcon className="w-8 h-8 text-primary-500" />
+              <div className="card hover-lift p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
+                      Avg Response
+                    </p>
+                    <p className="text-3xl font-bold text-white">
+                      {mockStats.avgResponseTime}
+                    </p>
+                  </div>
+                  <div className="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                    <ClockIcon className="w-6 h-6 text-blue-500" />
                   </div>
                 </div>
               </div>
 
-              <div className="card hover-lift">
-                <div className="card-content">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                        AI Confidence
-                      </p>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {(mockStats.confidenceScore * 100).toFixed(1)}%
-                      </p>
-                    </div>
-                    <CpuChipIcon className="w-8 h-8 text-secondary-500" />
+              <div className="card hover-lift p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
+                      AI Confidence
+                    </p>
+                    <p className="text-3xl font-bold text-white">
+                      {(mockStats.confidenceScore * 100).toFixed(1)}%
+                    </p>
+                  </div>
+                  <div className="w-12 h-12 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                    <CpuChipIcon className="w-6 h-6 text-purple-500" />
                   </div>
                 </div>
               </div>
 
-              <div className="card hover-lift">
-                <div className="card-content">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                        Deployments
-                      </p>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {mockStats.deploymentsToday}
-                      </p>
-                    </div>
-                    <RocketLaunchIcon className="w-8 h-8 text-purple-500" />
+              <div className="card hover-lift p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
+                      Deployments
+                    </p>
+                    <p className="text-3xl font-bold text-white">
+                      {mockStats.deploymentsToday}
+                    </p>
+                  </div>
+                  <div className="w-12 h-12 rounded-lg bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
+                    <RocketLaunchIcon className="w-6 h-6 text-pink-500" />
                   </div>
                 </div>
               </div>
 
-              <div className="card hover-lift">
-                <div className="card-content">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                        Success Rate
-                      </p>
-                      <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                        {mockStats.successRate}%
-                      </p>
-                    </div>
-                    <ChartBarIcon className="w-8 h-8 text-success-500" />
+              <div className="card hover-lift p-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">
+                      Success Rate
+                    </p>
+                    <p className="text-3xl font-bold text-white">
+                      {mockStats.successRate}%
+                    </p>
+                  </div>
+                  <div className="w-12 h-12 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center">
+                    <ChartBarIcon className="w-6 h-6 text-green-500" />
                   </div>
                 </div>
               </div>
@@ -242,18 +242,18 @@ export default function Dashboard() {
 
           {/* Pipeline Overview */}
           <motion.div variants={itemVariants}>
-            <div className="card">
-              <div className="card-header">
+            <div className="card p-6">
+              <div className="card-header pb-4 mb-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="card-title">Autonomous Pipeline Status</h2>
-                    <p className="card-description">
+                    <h2 className="text-xl font-semibold text-white mb-1">Autonomous Pipeline Status</h2>
+                    <p className="text-sm text-gray-400">
                       Real-time view of the AI agent workflow integrating Kestra, Cline CLI, CodeRabbit, and Vercel
                     </p>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <EyeIcon className="w-5 h-5 text-gray-400" />
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Live</span>
+                  <div className="flex items-center space-x-2 bg-green-500/10 border border-green-500/20 px-3 py-1.5 rounded-full">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-sm text-green-400 font-medium">Live</span>
                   </div>
                 </div>
               </div>
@@ -265,12 +265,12 @@ export default function Dashboard() {
 
           {/* Main Dashboard Grid */}
           <motion.div variants={itemVariants}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Issues Summary */}
-              <div className="card">
-                <div className="card-header">
-                  <h2 className="card-title">AI Issue Analysis</h2>
-                  <p className="card-description">
+              <div className="card p-6">
+                <div className="card-header pb-4 mb-6">
+                  <h2 className="text-xl font-semibold text-white mb-1">AI Issue Analysis</h2>
+                  <p className="text-sm text-gray-400">
                     Kestra AI Agent summaries from multiple monitoring sources
                   </p>
                 </div>
@@ -280,10 +280,10 @@ export default function Dashboard() {
               </div>
 
               {/* Generated Fixes */}
-              <div className="card">
-                <div className="card-header">
-                  <h2 className="card-title">Cline CLI Generated Fixes</h2>
-                  <p className="card-description">
+              <div className="card p-6">
+                <div className="card-header pb-4 mb-6">
+                  <h2 className="text-xl font-semibold text-white mb-1">Cline CLI Generated Fixes</h2>
+                  <p className="text-sm text-gray-400">
                     Autonomous code generation and testing results
                   </p>
                 </div>
@@ -296,12 +296,12 @@ export default function Dashboard() {
 
           {/* Decision History and Deployments */}
           <motion.div variants={itemVariants}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Decision History */}
-              <div className="card">
-                <div className="card-header">
-                  <h2 className="card-title">Autonomous Decisions</h2>
-                  <p className="card-description">
+              <div className="card p-6">
+                <div className="card-header pb-4 mb-6">
+                  <h2 className="text-xl font-semibold text-white mb-1">Autonomous Decisions</h2>
+                  <p className="text-sm text-gray-400">
                     AI decision-making history with confidence scores
                   </p>
                 </div>
@@ -311,10 +311,10 @@ export default function Dashboard() {
               </div>
 
               {/* Deployment Timeline */}
-              <div className="card">
-                <div className="card-header">
-                  <h2 className="card-title">Vercel Deployments</h2>
-                  <p className="card-description">
+              <div className="card p-6">
+                <div className="card-header pb-4 mb-6">
+                  <h2 className="text-xl font-semibold text-white mb-1">Vercel Deployments</h2>
+                  <p className="text-sm text-gray-400">
                     Automated deployment timeline and success metrics
                   </p>
                 </div>
@@ -327,27 +327,27 @@ export default function Dashboard() {
 
           {/* Recent Activity Feed */}
           <motion.div variants={itemVariants}>
-            <div className="card">
-              <div className="card-header">
-                <h2 className="card-title">Recent Activity</h2>
-                <p className="card-description">
+            <div className="card p-6">
+              <div className="card-header pb-4 mb-6">
+                <h2 className="text-xl font-semibold text-white mb-1">Recent Activity</h2>
+                <p className="text-sm text-gray-400">
                   Real-time feed of autonomous agent actions
                 </p>
               </div>
               <div className="card-content">
                 <div className="space-y-4">
                   {mockRecentActivity.map((activity) => (
-                    <div key={activity.id} className="flex items-start space-x-3">
+                    <div key={activity.id} className="flex items-start space-x-3 p-3 rounded-lg bg-gray-900/30 border border-gray-800 hover:border-gray-700 transition-colors">
                       <div className={`w-2 h-2 rounded-full mt-2 ${
-                        activity.severity === 'success' ? 'bg-success-500' :
-                        activity.severity === 'high' ? 'bg-error-500' :
-                        'bg-primary-500'
+                        activity.severity === 'success' ? 'bg-green-500 glow-green' :
+                        activity.severity === 'high' ? 'bg-red-500' :
+                        'bg-blue-500'
                       }`} />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-gray-900 dark:text-white">
+                        <p className="text-sm text-white">
                           {activity.message}
                         </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-gray-500 mt-1">
                           {activity.timestamp.toLocaleTimeString()} ago
                         </p>
                       </div>
@@ -362,18 +362,21 @@ export default function Dashboard() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-dark-700 mt-16">
+      <footer className="bg-black border-t border-gray-900 mt-16">
         <div className="container-wide py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-gray-400">
                 DevOps Intelligence Platform - Autonomous Operations
               </p>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-600 dark:text-gray-400">
-                System Status: Operational
-              </span>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-sm text-gray-400">
+                  System Status: Operational
+                </span>
+              </div>
             </div>
           </div>
         </div>

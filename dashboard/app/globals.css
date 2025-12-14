@@ -2,84 +2,143 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Simple global styles for the DevOps Intelligence Platform */
+/* Modern Black Theme - DevOps Intelligence Platform */
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    @apply bg-black text-white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
-.hackathon-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.demo-card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e5e7eb;
+::-webkit-scrollbar-track {
+  @apply bg-black;
 }
 
-.dark .demo-card {
-  background: #1f2937;
-  border-color: #374151;
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-800 rounded-full;
 }
 
-.metric-card {
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-  background: white;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-700;
 }
 
-.dark .metric-card {
-  background: #1f2937;
-  border-color: #374151;
+/* Glow Effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
-.status-success {
-  background-color: #dcfce7;
-  color: #166534;
+.glow-green {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
 }
 
-.dark .status-success {
-  background-color: #14532d;
-  color: #bbf7d0;
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
 }
 
-.status-warning {
-  background-color: #fef3c7;
-  color: #92400e;
+/* Card Styles */
+.card {
+  @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl;
+  transition: all 0.3s ease;
 }
 
-.dark .status-warning {
-  background-color: #78350f;
-  color: #fde68a;
+.card:hover {
+  @apply border-gray-700;
+  transform: translateY(-2px);
 }
 
-.status-error {
-  background-color: #fee2e2;
-  color: #991b1b;
+.card-header {
+  @apply border-b border-gray-800 pb-4 mb-4;
 }
 
-.dark .status-error {
-  background-color: #7f1d1d;
-  color: #fecaca;
+.card-title {
+  @apply text-xl font-semibold text-white;
 }
 
-.pulse-animation {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.card-description {
+  @apply text-sm text-gray-400 mt-1;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
+.card-content {
+  @apply text-gray-300;
+}
+
+/* Badge Styles */
+.badge {
+  @apply px-2 py-1 text-xs font-medium rounded-md;
+}
+
+.badge-gray {
+  @apply bg-gray-800 text-gray-300 border border-gray-700;
+}
+
+/* Button Styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white;
+}
+
+.btn-secondary {
+  @apply bg-purple-600 hover:bg-purple-700 text-white;
+}
+
+.btn-outline {
+  @apply border border-gray-700 hover:border-gray-600 text-gray-300 hover:text-white;
+}
+
+.btn-sm {
+  @apply px-3 py-1.5 text-sm;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  @apply border-gray-700;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+/* Animated Background */
+.animated-bg {
+  background: linear-gradient(-45deg, #000000, #0a0a0a, #000000, #0a0a0a);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    opacity: 0.5;
+    background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Container */
+.container-wide {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }

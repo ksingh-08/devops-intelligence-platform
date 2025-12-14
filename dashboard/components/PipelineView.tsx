@@ -133,13 +133,13 @@ export default function PipelineView() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed':
-        return 'border-success-500 bg-success-50 dark:bg-success-900/20'
+        return 'border-green-500/30 bg-green-500/5'
       case 'running':
-        return 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 animate-pulse'
+        return 'border-blue-500/30 bg-blue-500/5 animate-pulse'
       case 'failed':
-        return 'border-error-500 bg-error-50 dark:bg-error-900/20'
+        return 'border-red-500/30 bg-red-500/5'
       default:
-        return 'border-gray-300 bg-gray-50 dark:bg-gray-800'
+        return 'border-gray-800 bg-gray-900/50'
     }
   }
 
@@ -147,17 +147,17 @@ export default function PipelineView() {
     <div className="space-y-6">
       {/* Pipeline Progress Bar */}
       <div className="relative">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-sm font-medium text-gray-300">
             Pipeline Progress
           </span>
-          <span className="text-sm text-gray-500 dark:text-gray-400">
+          <span className="text-sm text-gray-400">
             {Math.round(((currentStep + 1) / steps.length) * 100)}% Complete
           </span>
         </div>
-        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+        <div className="w-full bg-gray-900 rounded-full h-2 border border-gray-800">
           <motion.div
-            className="bg-gradient-to-r from-primary-600 to-secondary-600 h-2 rounded-full"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full"
             initial={{ width: 0 }}
             animate={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -176,11 +176,11 @@ export default function PipelineView() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`relative flex items-center p-4 rounded-lg border-2 transition-all duration-300 ${getStatusColor(step.status)}`}
+              className={`relative flex items-center p-4 rounded-lg border transition-all duration-300 ${getStatusColor(step.status)}`}
             >
               {/* Step Number */}
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white dark:bg-dark-800 border-2 border-gray-300 dark:border-dark-600 flex items-center justify-center mr-4">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center mr-4">
+                <span className="text-sm font-medium text-white">
                   {index + 1}
                 </span>
               </div>
@@ -188,14 +188,14 @@ export default function PipelineView() {
               {/* Step Content */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center space-x-3 mb-1">
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                  <h3 className="text-sm font-medium text-white">
                     {step.name}
                   </h3>
                   
                   {/* Tool Badge */}
                   <div className="flex items-center space-x-1">
                     <div className={`w-2 h-2 rounded-full ${toolColors[step.tool]}`} />
-                    <span className="text-xs font-medium text-gray-600 dark:text-gray-400 capitalize">
+                    <span className="text-xs font-medium text-gray-400 capitalize">
                       {step.tool}
                     </span>
                   </div>
@@ -203,25 +203,25 @@ export default function PipelineView() {
                   {/* Confidence Score */}
                   {step.confidence && (
                     <div className="flex items-center space-x-1">
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
+                      <span className="text-xs text-gray-500">
                         Confidence:
                       </span>
-                      <span className="text-xs font-medium text-primary-600 dark:text-primary-400">
+                      <span className="text-xs font-medium text-blue-400">
                         {(step.confidence * 100).toFixed(1)}%
                       </span>
                     </div>
                   )}
                 </div>
                 
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                <p className="text-sm text-gray-400 mb-2">
                   {step.description}
                 </p>
 
                 {/* Duration */}
                 {step.duration && (
                   <div className="flex items-center space-x-1">
-                    <ClockIcon className="w-3 h-3 text-gray-400" />
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                    <ClockIcon className="w-3 h-3 text-gray-500" />
+                    <span className="text-xs text-gray-500">
                       {step.duration}s
                     </span>
                   </div>
@@ -242,7 +242,7 @@ export default function PipelineView() {
 
               {/* Connection Line */}
               {index < steps.length - 1 && (
-                <div className="absolute left-8 top-full w-0.5 h-4 bg-gray-300 dark:bg-gray-600 transform translate-y-0" />
+                <div className="absolute left-10 top-full w-0.5 h-4 bg-gray-800 transform translate-y-0" />
               )}
             </motion.div>
           )
@@ -250,56 +250,56 @@ export default function PipelineView() {
       </div>
 
       {/* Pipeline Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-800">
         <div className="text-center">
-          <div className="text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="text-lg font-semibold text-white">
             {steps.filter(s => s.status === 'completed').length}
           </div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-sm text-gray-400">
             Completed
           </div>
         </div>
         
         <div className="text-center">
-          <div className="text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="text-lg font-semibold text-white">
             {steps.filter(s => s.status === 'running').length}
           </div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-sm text-gray-400">
             Running
           </div>
         </div>
         
         <div className="text-center">
-          <div className="text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="text-lg font-semibold text-white">
             {steps.filter(s => s.duration).reduce((acc, s) => acc + (s.duration || 0), 0)}s
           </div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-sm text-gray-400">
             Total Time
           </div>
         </div>
         
         <div className="text-center">
-          <div className="text-lg font-semibold text-gray-900 dark:text-white">
+          <div className="text-lg font-semibold text-white">
             {steps.filter(s => s.confidence).length > 0 
               ? (steps.filter(s => s.confidence).reduce((acc, s) => acc + (s.confidence || 0), 0) / steps.filter(s => s.confidence).length * 100).toFixed(1)
               : 0}%
           </div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-sm text-gray-400">
             Avg Confidence
           </div>
         </div>
       </div>
 
       {/* Real-time Status */}
-      <div className="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-lg p-4">
+      <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-lg p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-3 h-3 bg-success-500 rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-gray-900 dark:text-white">
+            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse glow-green" />
+            <span className="text-sm font-medium text-white">
               Pipeline Active
             </span>
           </div>
-          <div className="text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-sm text-gray-400">
             Next execution in 4m 32s
           </div>
         </div>

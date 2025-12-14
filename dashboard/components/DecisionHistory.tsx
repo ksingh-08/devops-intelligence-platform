@@ -99,16 +99,16 @@ const mockDecisions: Decision[] = [
 ]
 
 const decisionColors = {
-  auto_resolve: 'bg-success-100 text-success-800 dark:bg-success-900/20 dark:text-success-200',
-  escalate_human: 'bg-error-100 text-error-800 dark:bg-error-900/20 dark:text-error-200',
-  schedule_maintenance: 'bg-warning-100 text-warning-800 dark:bg-warning-900/20 dark:text-warning-200',
-  monitor_only: 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200'
+  auto_resolve: 'bg-green-500/10 text-green-400 border border-green-500/20',
+  escalate_human: 'bg-red-500/10 text-red-400 border border-red-500/20',
+  schedule_maintenance: 'bg-orange-500/10 text-orange-400 border border-orange-500/20',
+  monitor_only: 'bg-gray-800 text-gray-300 border border-gray-700'
 }
 
 const outcomeColors = {
-  success: 'text-success-600 dark:text-success-400',
-  failure: 'text-error-600 dark:text-error-400',
-  pending: 'text-warning-600 dark:text-warning-400'
+  success: 'text-green-400',
+  failure: 'text-red-400',
+  pending: 'text-orange-400'
 }
 
 const outcomeIcons = {
@@ -121,10 +121,10 @@ export default function DecisionHistory() {
   const [selectedDecision, setSelectedDecision] = useState<Decision | null>(null)
 
   const getConfidenceColor = (confidence: number) => {
-    if (confidence >= 0.9) return 'text-success-600 dark:text-success-400'
-    if (confidence >= 0.8) return 'text-primary-600 dark:text-primary-400'
-    if (confidence >= 0.7) return 'text-warning-600 dark:text-warning-400'
-    return 'text-error-600 dark:text-error-400'
+    if (confidence >= 0.9) return 'text-green-400'
+    if (confidence >= 0.8) return 'text-blue-400'
+    if (confidence >= 0.7) return 'text-orange-400'
+    return 'text-red-400'
   }
 
   const successRate = mockDecisions.filter(d => d.outcome === 'success').length / 

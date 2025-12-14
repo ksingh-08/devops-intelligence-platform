@@ -116,9 +116,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased bg-gray-50 dark:bg-dark-900`}>
+      <body className={`${inter.className} antialiased bg-black`}>
         <Providers>
-          <div className="min-h-screen">
+          <div className="min-h-screen bg-black">
             {children}
           </div>
           <Toaster
@@ -126,8 +126,9 @@ export default function RootLayout({
             toastOptions={{
               duration: 4000,
               style: {
-                background: '#363636',
+                background: '#1a1a1a',
                 color: '#fff',
+                border: '1px solid #333',
               },
               success: {
                 duration: 3000,
@@ -146,16 +147,6 @@ export default function RootLayout({
             }}
           />
         </Providers>
-        
-        {/* Hackathon Badge */}
-        <div className="fixed bottom-4 right-4 z-50">
-          <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-3 py-2 rounded-lg shadow-lg text-sm font-medium">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span>AI Agents Assemble Hackathon</span>
-            </div>
-          </div>
-        </div>
       </body>
     </html>
   )
